@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="basic.css">
+    <script type="module" src="basic.js" defer></script>
+    <style>
+        body { 
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center; /* 세로 정렬을 중앙으로 */
+            height: 100vh;
+            position: relative;
+        }
+        canvas { 
+            display: block;
+            width: 100%; /* 전체 너비 */
+            height: 100%; /* 전체 높이 */
+        }
+        .survey-container {
+            position: absolute;
+            width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 10;  /* Ensure the survey is above the canvas */
+            top: 50%;  /* 수직 중앙 위치 */
+            left: 50%;  /* 수평 중앙 위치 */
+            transform: translate(-50%, -50%);  /* 정확한 중앙 정렬 */
+        }
+
+        .question {
+            margin: 5%;
+        }
+        textarea {
+            margin-top: 5%;;
+        }
+        .question > div {
+          margin-top: 3%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            margin-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="webgl-container"></div>
+    <div class="survey-container">
+        <form id="surveyForm">
+            <div class="question" id="questionContainer"></div>
+            <button type="button" id="nextButton">다음</button>
+        </form>
+        <div id="results" class="hidden"></div>
+    </div>
+</body>
+</html> 
